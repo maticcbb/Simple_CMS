@@ -11,4 +11,4 @@ $password = '';
 $db = 'cms_projekt';
 
 require_once(APP_PATH."core/core.php");
-$SK = new SK_Core($server,$user,$password,$db);
+$CMS = new CMS_Core($server,$user,$password,$db);
