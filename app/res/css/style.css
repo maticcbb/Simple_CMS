@@ -1,0 +1,101 @@
+.box{
+    border: 1px solid black;
+     height: 50px;
+}
+
+/*CONTACT/LOG/REGISTER BAR*/
+#bar-height{
+    height: 50px;
+    
+}
+#reg-badge{
+    padding: 8px;
+    font-size: 15px;
+}
+#log-badge{
+    padding: 8px;
+    font-size: 15px;
+}
+.text-font{font-family: 'Work Sans', sans-serif;}
+/*----------MENU BAR-------*/
+
+/*LOGO CONTENT*/
+#logo-img{
+    width: 60px;
+    margin: 5px;
+}
+#second-bar-height{
+    height:  70px;
+}
+#logo-title{
+    transform: translate(0px,15px);
+    text-shadow: 1px 0px 1px;
+}
+
+/*--------MAIN CONTENT---*/
+
+/*CAROUSEL HEADER*/
+#carousel-style{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*MAIN ARTICLE*/
+.main-marg{
+    margin-top:  60px;
+}
+.img-article{
+    width: 300px;
+}
+.bottom-margin{margin-bottom: 60px;}
+
+
+/*MODAL-LOGIN-CHECKBOX*/
+#checkbox-padding{
+   transform: scale(1.2)
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+/*PAGINATION WIDTH*/
+.page-item{
+    width: 200px;
+    
+}
+
+.hamburger{
+    display: none!important;
+}
+
+@media screen and (max-width:768px)
+{
+/*MOBILE SCREEN / DISPLAY NONE*/
+    
+    .hamburger{
+    display:block!important;
+}
+    .menu-btn{
+    display:none!important; 
+}
+    .nav-item{
+        transform: translate(0px,-60px);
+    }
+    .badge-icon{
+        display:none!important;
+    }
+    
+    .success{
+        color:green;
+    }
+    .warning{
+        color:yellow;
+    }
+    .error{
+        color:red;
+    }
+
+
+}
