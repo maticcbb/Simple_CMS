@@ -28,4 +28,29 @@ class CMS_Core {
         $this->Database->close();
     }
 
+    function head(){
+        if($this->Auth->checkLoginStatus()) {
+            include(APP_PATH . "core/templates/t_head.php");
+        }
+        if(isset($_GET['login']) && $this->Auth->checkLoginStatus() == FALSE){
+            include(APP_PATH . "core/templates/t_login.php");
+        }
+    }
+
+    function toolbar() {
+        if ($this->Auth->checkLoginStatus()) {
+            include(APP_PATH . "core/templates/t_toolbar.php");
+        }
+    }
+
+    function login_link() {
+        if ($this->Auth->checkLoginStatus()) {
+            echo '<a href="' . SITE_PATH . 'app/logout.php" class="btn btn-success btn-large">Wyloguj</a>';
+        }
+        else {
+            echo '<a href="?login" class="btn btn-success btn-large">Zaloguj</a>';
+        }
+
+    }
+
 }
