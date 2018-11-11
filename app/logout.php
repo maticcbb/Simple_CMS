@@ -1,8 +1,7 @@
 <?php
 /* Wylogowanie usuwa sesje rozpoczyna nową i przekierowuje do formularza */
-include("includes/init.php");
+include("./init.php");
 
-$Auth->logout();
+$CMS_Core->Auth->logout();
 
-$Template->setAlert('Wylogowałeś się','success');
-$Template->redirect('login.php');
+$CMS_Core->Template->redirect(SITE_PATH);

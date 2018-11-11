@@ -5,19 +5,21 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->getData('nazwa'); ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Anuluj">
-          <span aria-hidden="true">&times;</span>
+          <a href="#" id="cancel" class="cancel"><span aria-hidden="true">&times;</span></a>
         </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="" method="post" id="login">
                     <!-- Wyświetlanie alertów -->
+                    <div style="clear: both"></div>
+                    <div>
                     <?php 
                         $alerts = $this->getAlerts();
                         if($alerts != '') {
                             echo '<ul class="alerts">' . $alerts .'</ul>' ;
                         }
                     ?>
-
+                        </div>
                         <!-----------------EMAIL---------------->
                         <div class="form-group row justify-content-end">
                             <label for="username" class="col-md-4 col-form-label text-right">Nazwa użytkownika</label>
