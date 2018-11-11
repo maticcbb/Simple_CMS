@@ -32,6 +32,7 @@ class CMS_Core {
         if($this->Auth->checkLoginStatus()) {
             include(APP_PATH . "core/templates/t_head.php");
         }
+        /* jeżeli istnieje zmienna login w url pokaż modal logowania */
         if(isset($_GET['login']) && $this->Auth->checkLoginStatus() == FALSE){
             include(APP_PATH . "core/templates/t_login.php");
         }
@@ -45,10 +46,11 @@ class CMS_Core {
 
     function login_link() {
         if ($this->Auth->checkLoginStatus()) {
-            echo '<a href="' . SITE_PATH . 'app/logout.php" class="btn btn-success btn-large">Wyloguj</a>';
+            echo '<a id="log-badge" href="' . SITE_PATH . 'app/logout.php" class="btn btn-success btn-large">Wyloguj</a>';
         }
         else {
-            echo '<a href="?login" class="btn btn-success btn-large">Zaloguj</a>';
+           /*  zmienia zmienna login w url */
+            echo '<a id="log-badge"  href="?login" class="badge badge-info border border border-dark">Zaloguj</a>';
         }
 
     }

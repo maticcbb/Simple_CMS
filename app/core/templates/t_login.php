@@ -1,4 +1,5 @@
 <link type="text/css" rel="stylesheet" href="<?php echo APP_RES ?>css/colorbox.css">
+<script type="text/javascript" src="<?php echo APP_RES ?>javascript/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo APP_RES; ?>javascript/jquery.colorbox-min.js"></script>
 
 <script>

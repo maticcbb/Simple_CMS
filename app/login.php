@@ -1,35 +1,36 @@
 <?php
 
-include('includes/database.php');
-include('includes/init.php');
+
+include('./init.php');
 
 if(isset($_POST['submit'])){
     /* przypisanie wartości z pola formularza */
-    $Template->setData('input_user' , $_POST['username']);
-    $Template->setData('input_pass' , $_POST['password']);
+    $CMS_Core->Template->setData('input_user' , $_POST['username']);
+    $CMS_Core->Template->setData('input_pass' , $_POST['password']);
 
     // po wpisaniu pustych pól widok logowania jest ponownie uruchamiany 
     if($_POST['username'] == '' || $_POST['password'] == ''){
-        $Template->setAlert('Uzupełnij wymagane pola','error');
-        $Template->load('views/v_login.php');
+        $CMS_Core->Template->setAlert('Uzupełnij wymagane pola','error');
+        echo '<script>$.colorbox.resize();</script>';
+        $CMS_Core->Template->load('core/views/v_login.php');
     } 
     // hasło lub login nie prawidłowe
-    else if ($Auth->validateLogin($Template->getData('input_user'), $Template->getData('input_pass')) == false) {
-        $Template->setAlert('Nieprawidłowy login lub hasło' , 'error');
-        $Template->load('views/v_login.php');
+    else if ($Auth->validateLogin($CMS_Core->Template->getData('input_user'), $CMS_Core->Template->getData('input_pass')) == false) {
+        $CMS_Core->Template->setAlert('Nieprawidłowy login lub hasło' , 'error');
+        echo '<script>$.colorbox.resize();</script>';
+        $CMS_Core->Template->load('core/views/v_login.php');
     }
 
     else {
         // prawidłowe zalogowanie 
-        $_SESSION['username'] = $Template->getData('input_user');
+        $_SESSION['username'] = $CMS_Core->Template->getData('input_user');
         $_SESSION['loggedin'] = true ;
-        $Template->setAlert('Witaj' . $Template->getData('input_user'));
-        $Template->redirect('users.php');
+        $CMS_Core->Template->load(APP_PATH . 'core/views/v_logginin.php');
     }
 
 }  
 
 else {
-    $Template->load('views/v_login.php');
+    $CMS_Core->Template->load(APP_PATH . 'core/views/v_login.php');
 
 }

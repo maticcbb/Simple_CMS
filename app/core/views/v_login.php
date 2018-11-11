@@ -1,20 +1,6 @@
 
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="/views/font-awesome.css">
-    <link rel="stylesheet" href="/views/bootstrap.min.css">
-    <link rel="stylesheet" href="/views/style.css">
-</head>
-
-<body class="text-font">
   
-  <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+       
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->getData('nazwa'); ?></h5>
@@ -47,7 +33,7 @@
                             <div class="col-md-5">
                                 <input type="password" class="form-control" name="password" value="<?php $this->getData('input_pass'); ?>" placeholder="Wpisz hasło">
                             </div>
-                        </div>
+                        
 
 
                     
@@ -62,6 +48,4 @@
                 </form>
             </div>
         </div>
-    </div>
-</body>
-</html>
+   

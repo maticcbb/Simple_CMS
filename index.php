@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="<?php echo APP_RES ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo APP_RES ?>css/style.css">
     <script type="text/javascript" src="<?php echo APP_RES ?>javascript/jquery.min.js"></script>
-   
     
     <?php $CMS_Core->head(); ?>
 </head>
@@ -42,7 +41,8 @@
                         </div>
                         <!--BADGE LOGIN-->
                         <div class="p-2">
-                            <a id="log-badge" href="#" class="badge badge-info border border border-dark" data-toggle="modal" data-target="#myModal"><?php $CMS_Core->login_link(); ?></a></div>
+                           <?php $CMS_Core->login_link(); ?>
+                           </div>
                         <!--BADGE REGISTER-->
                         <div class="p-2">
                             <a id="reg-badge" href="#" class="badge badge-info border border-dark" data-toggle="modal" data-target="#regModal">Rejestracja</a></div>
@@ -220,136 +220,6 @@
             </div>
         </div>
     </footer>
-
-    <!------------------MODAL REGISTRATION--------->
-
-    <div class="modal fade bd-example-modal-lg" id="regModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Rejestracja</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Anuluj">
-          <span aria-hidden="true">&times;</span>
-        </button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-
-                        <!-----------------EMAIL---------------->
-                        <div class="form-group row justify-content-end">
-                            <label for="inputEmail3" class="col-md-4 col-form-label text-right">Email</label>
-                            <div class="col-md-5">
-                                <input type="email" class="form-control float-left" id="inputEmail3" placeholder="Podaj email">
-                            </div>
-                        </div>
-
-
-                        <!-------------------PASSWORD------------>
-                        <div class="form-group row justify-content-end">
-                            <label for="inputPassword3" class="col-md-4 col-form-label text-right">Hasło</label>
-                            <div class="col-md-5">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Podaj hasło">
-                            </div>
-                        </div>
-
-                        <!-----------PASSWORD AGAIN------------------------>
-                        <div class="form-group row justify-content-end">
-                            <label for="inputPassword4" class="col-md-4 col-form-label text-right">Hasło ponownie</label>
-                            <div class="col-md-5">
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Podaj hasło">
-                            </div>
-                        </div>
-
-                        <!--NAME /SURNAME-->
-                        <div class="form-group row justify-content-end">
-                            <label for="inputName" class="col-md-4 col-form-label text-right">Imię i Nazwisko</label>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" placeholder="Podaj imię i nazwisko" id="inputName">
-                            </div>
-                        </div>
-
-                        <!--------SELECT BOX---------->
-                        <div class="form-group row justify-content-end">
-                            <label class="col-md-4 col-form-label text-right" for="inputChoose">Jak się o nas dowiedziałeś ?</label>
-                            <div class="col-md-5">
-                                <select id="inputChoose" class="form-control ">
-                                <option selected>Wybierz</option>
-                                <option>Praca</option>
-                                <option>Internet</option>
-                                <option>Znajomi</option>
-                              </select>
-                            </div>
-                        </div>
-
-                </div>
-
-                <!--MODAL BUTTONS-->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Anuluj</button>
-                    <button type="submit" class="btn btn-primary">Rejestracja</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-------MODAL LOGIN------->
-
-    <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Logowanie</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Anuluj">
-          <span aria-hidden="true">&times;</span>
-        </button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-
-                        <!-----------------EMAIL---------------->
-                        <div class="form-group row justify-content-end">
-                            <label for="inputEmail3" class="col-md-4 col-form-label text-right">Email</label>
-                            <div class="col-md-5">
-                                <input type="email" class="form-control float-left" id="inputEmail3" placeholder="Podaj email">
-                            </div>
-                        </div>
-
-
-                        <!-------------------PASSWORD------------>
-                        <div class="form-group row justify-content-end">
-                            <label for="inputPassword3" class="col-md-4 col-form-label text-right">Hasło</label>
-                            <div class="col-md-5">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Podaj hasło">
-                            </div>
-                        </div>
-
-
-                        <!-------REMEMBER CHECKBOX----->
-                        <div class="form-group row justify-content-end">
-                           <div class="offset-col-md-5"></div>
-                            <div class="col-md-5">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                      <input id="checkbox-padding" class="form-check-input" type="checkbox"> Zapamiętaj mnie
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-
-                <!-------MODAL BUTTONS----->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Anuluj</button>
-                    <button type="submit" class="btn btn-primary">Zaloguj</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
 
 
