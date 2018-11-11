@@ -6,14 +6,17 @@
     <meta charset="UTF-8">
     <title>Bootstrap</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="./app/res/css/font-awesome.css">
-    <link rel="stylesheet" href="./app/res/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./app/res/css/style.css">
-    <?php $CMS->head(); ?>
+    <link rel="stylesheet" href="<?php echo APP_RES ?>css/font-awesome.css">
+    <link rel="stylesheet" href="<?php echo APP_RES ?>css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo APP_RES ?>css/style.css">
+    <script type="text/javascript" src="<?php echo APP_RES ?>javascript/jquery.min.js"></script>
+   
+    
+    <?php $CMS_Core->head(); ?>
 </head>
 
 <body class="text-font">
-<?php $CMS->toolbar(); ?>
+<?php $CMS_Core->toolbar(); ?>
     <!--NAVIGATION-->
     <nav class="nav-dark bg-dark rounded-bottom">
         <div class="container-fluid ">
@@ -39,7 +42,7 @@
                         </div>
                         <!--BADGE LOGIN-->
                         <div class="p-2">
-                            <a id="log-badge" href="#" class="badge badge-info border border border-dark" data-toggle="modal" data-target="#myModal"><?php $CMS->login_link(); ?></a></div>
+                            <a id="log-badge" href="#" class="badge badge-info border border border-dark" data-toggle="modal" data-target="#myModal"><?php $CMS_Core->login_link(); ?></a></div>
                         <!--BADGE REGISTER-->
                         <div class="p-2">
                             <a id="reg-badge" href="#" class="badge badge-info border border-dark" data-toggle="modal" data-target="#regModal">Rejestracja</a></div>
@@ -355,9 +358,10 @@
 
 
 
-    <script type="text/javascript" src="./app/javascript/popper.min.js"></script>
-    <script type="text/javascript" src="./app/javascript/jquery.min.js"></script>
-    <script type="text/javascript" src="./app/javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo APP_RES ?>javascript/popper.min.js"></script>
+    
+    <script type="text/javascript" src="<?php echo APP_RES ?>javascript/bootstrap.min.js"></script>
+    
 
 
 
