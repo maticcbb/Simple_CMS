@@ -1,3 +1,4 @@
+<?php include("app/init.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +6,14 @@
     <meta charset="UTF-8">
     <title>Bootstrap</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="./res/css/font-awesome.css">
-    <link rel="stylesheet" href="./res/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./res/css/style.css">
+    <link rel="stylesheet" href="./app/res/css/font-awesome.css">
+    <link rel="stylesheet" href="./app/res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./app/res/css/style.css">
+    <?php $CMS->head(); ?>
 </head>
 
 <body class="text-font">
+<?php $CMS->toolbar(); ?>
     <!--NAVIGATION-->
     <nav class="nav-dark bg-dark rounded-bottom">
         <div class="container-fluid ">
@@ -36,7 +39,7 @@
                         </div>
                         <!--BADGE LOGIN-->
                         <div class="p-2">
-                            <a id="log-badge" href="#" class="badge badge-info border border border-dark" data-toggle="modal" data-target="#myModal">Logowanie</a></div>
+                            <a id="log-badge" href="#" class="badge badge-info border border border-dark" data-toggle="modal" data-target="#myModal"><?php $CMS->login_link(); ?></a></div>
                         <!--BADGE REGISTER-->
                         <div class="p-2">
                             <a id="reg-badge" href="#" class="badge badge-info border border-dark" data-toggle="modal" data-target="#regModal">Rejestracja</a></div>
@@ -53,7 +56,7 @@
                 <div class="col-md-5">
                     <section id="logo-content">
                         <div class="text-left">
-                            <img id="logo-img" src="./images/logo.png" class="rounded float-left " alt="Company Logo">
+                            <img id="logo-img" src="./app/res/images/logo.png" class="rounded float-left " alt="Company Logo">
                         </div>
                         <h2 id="logo-title" class="text-info">IT-COMPANY</h2>
                     </section>
@@ -111,13 +114,13 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="./images/slider1.jpg" alt="First slide">
+                                <img class="d-block w-100" src="./app/res/images/slider1.jpg" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/slider2.jpg" alt="Second slide">
+                                <img class="d-block w-100" src="./app/res/images/slider2.jpg" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/slider3.jpg" alt="Third slide">
+                                <img class="d-block w-100" src="./app/res/images/slider3.jpg" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -144,7 +147,7 @@
                 <!-----------FIRST ARTICLE----->
                 <!--IMG-->
                 <div class="col-md-5 main-marg ">
-                    <img class="float-left img-article img-thumbnail" src="./images/article1-main.jpg" alt="text-image">
+                    <img class="float-left img-article img-thumbnail" src="./app/res/images/article1-main.jpg" alt="text-image">
                 </div>
 
                 <!--TEXT-->
@@ -164,7 +167,7 @@
                 </div>
                 <!--IMG-->
                 <div class="col-md-5 bottom-margin ">
-                    <img class="float-right img-article img-thumbnail" src="./images/article2-main.jpg" alt="text-image">
+                    <img class="float-right img-article img-thumbnail" src="./app/res/images/article2-main.jpg" alt="text-image">
                 </div>
             </div>
         </div>
@@ -352,9 +355,9 @@
 
 
 
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./app/javascript/popper.min.js"></script>
+    <script type="text/javascript" src="./app/javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="./app/javascript/bootstrap.min.js"></script>
 
 
 
