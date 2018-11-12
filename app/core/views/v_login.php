@@ -1,4 +1,32 @@
+<script>
+    $(document).ready(function(){
 
+        $('#login-form').on('submit' , function(e){
+
+            e.preventDefault();
+
+            var username = $('input#username').val();
+            var password = $('input#password').val();
+
+            var dataString = 'username=' + username + '&password=' + password;
+            
+$.ajax({
+    type: "POST",
+    url: "<?php echo SITE_PATH; ?>app/login.php",
+    data: dataString,
+    cache: false,
+    success: function(html){
+        $('#cboxLoadedContent').html(html);
+    }
+
+
+
+            });
+
+        });
+
+    });
+    </script>
   
        
             <div class="modal-content">
@@ -9,7 +37,7 @@
         </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post" id="login">
+                    <form action="" method="post" id="login-form">
                     <!-- Wyświetlanie alertów -->
                     <div style="clear: both"></div>
                     <div>
@@ -20,11 +48,11 @@
                         }
                     ?>
                         </div>
-                        <!-----------------EMAIL---------------->
+                        <!-----------------LOGIN---------------->
                         <div class="form-group row justify-content-end">
-                            <label for="username" class="col-md-4 col-form-label text-right">Nazwa użytkownika</label>
+                            <label for="username" id="username" class="col-md-4 col-form-label text-right">Nazwa użytkownika</label>
                             <div class="col-md-5">
-                                <input type="text" class="form-control float-left" name="username" value="<?php echo $this->getData('input_user') ; ?>" placeholder="Wpisz email">
+                                <input type="text"  class="form-control float-left" id="username" name="username" value="<?php echo $this->getData('input_user') ; ?>" placeholder="Wpisz nazwę użytkownika">
                             </div>
                         </div>
 
@@ -33,7 +61,7 @@
                         <div class="form-group row justify-content-end">
                             <label for="password" class="col-md-4 col-form-label text-right">Hasło</label>
                             <div class="col-md-5">
-                                <input type="password" class="form-control" name="password" value="<?php $this->getData('input_pass'); ?>" placeholder="Wpisz hasło">
+                                <input type="password" id="password" class="form-control" name="password" value="<?php $this->getData('input_pass'); ?>" placeholder="Wpisz hasło">
                             </div>
                         
 
@@ -45,7 +73,7 @@
                 <div class="modal-footer">
                 
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Anuluj</button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Zaloguj">
+                    <input type="submit"  name="submit" class="submit btn btn-primary" value="Zaloguj">
                 </div>
                 </form>
             </div>

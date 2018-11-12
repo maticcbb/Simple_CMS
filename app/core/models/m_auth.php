@@ -8,10 +8,13 @@ class Auth {
     }
 
     function validatelogin($user, $password){
-        global $Database;
+        global $CMS_Core;
+
+
+        
         $mixed_pass = md5($password . $this->salt);
 
-        if($stmt = $Database->prepare("SELECT * FROM users WHERE username = ? AND password = ? ")){
+        if($stmt = $CMS_Core->Database->prepare("SELECT * FROM users WHERE username = ? AND password = ? ")){
          /*   przekazujemy parametry do zapytania , 'ss'- dwa typy string  , md5 hashowane hasło */
             $stmt->bind_param("ss", $user, $mixed_pass);
             $stmt->execute();
