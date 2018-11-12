@@ -38,7 +38,7 @@ class Template {
         foreach ($this->setAlertTypes as $alert) {
             if(isset($_SESSION[$alert])){
                 foreach ($_SESSION[$alert] as $value) {
-                    $data .= '<li class="'. $alert .'">' . $value . '</li>';
+                    $data .= '<li class="alert alert-'. $alert .'">' . $value . '</li>';
             
                 };
                 unset($_SESSION[$alert]); 

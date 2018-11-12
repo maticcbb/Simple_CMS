@@ -19,9 +19,18 @@ $.ajax({
         $('#cboxLoadedContent').html(html);
     }
 
-
-
             });
+
+        });
+        /* usuwa parametr z linku , anulowanie formularza */
+        $('#exit').on( "click", function(e){
+            e.preventDefault();
+
+            $.colorbox.close();
+
+            var page = window.location.href;
+            page = page.substring(0, page.lastIndexOf('?'));
+            window.location = page ;
 
         });
 
@@ -32,9 +41,9 @@ $.ajax({
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"><?php echo $this->getData('nazwa'); ?></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Anuluj">
-          <a href="#" id="cancel" class="cancel"><span aria-hidden="true">&times;</span></a>
-        </button>
+                   
+          <a href="#" id="exit" class="cancel"><span  aria-hidden="true">&times;</span></a>
+      
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" id="login-form">
