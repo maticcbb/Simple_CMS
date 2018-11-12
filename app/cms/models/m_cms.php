@@ -38,7 +38,7 @@ class Cms {
         if($this->CMS->Auth->checkLoginStatus()){
             /* linki do edycji istniejących elementów na stronie  */
             $edit_start = '<div class="edit">';
-            $edit_type = '<a class="edit_type btn btn-dark" href=" '. SITE_PATH . 'app/cms.edit.php?id=' . $id . '&type=' . 
+            $edit_type = '<a class="edit_type badge badge-dark" href=" '. SITE_PATH . 'app/cms.edit.php?id=' . $id . '&type=' . 
             $type . '">' . $type . '</a>';
             $edit_link = '<a class="edit_link" href="' . SITE_PATH . 'app/cms/edit.php' . $id . '&type=' .
             $type . '">Edytuj blok</a>';
