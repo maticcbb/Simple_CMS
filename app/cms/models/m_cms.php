@@ -38,9 +38,8 @@ class Cms {
         if($this->CMS->Auth->checkLoginStatus()){
             /* linki do edycji istniejących elementów na stronie  */
             $edit_start = '<div class="edit">';
-            $edit_type = '<a class="edit_type badge badge-dark" href=" '. SITE_PATH . 'app/cms.edit.php?id=' . $id . '&type=' . 
-            $type . '">' . $type . '</a>';
-            $edit_link = '<a class="edit_link" href="' . SITE_PATH . 'app/cms/edit.php' . $id . '&type=' .
+            $edit_type = '<a class="edit_type badge badge-dark" href=" '. SITE_PATH . 'app/cms/edit.php?id=' . $id . '&type=' . $type . '">' . $type . '</a>';
+            $edit_link = '<a class="edit_link" href="' . SITE_PATH . 'app/cms/edit.php?id=' . $id . '&type=' .
             $type . '">Edytuj blok</a>';
             $edit_end = '</div>';
 
@@ -51,6 +50,22 @@ class Cms {
         else {
             echo $content;
         }
+    }
+
+    function generate_field($type, $content){
+        if($type == 'wysiwyg'){
+            return '<textarea name="field" id="field" calss="wysiwyg">' . $content . '</textarea>';
+        }   
+        else if ($type == 'textarea') {
+            return '<textarea name="field" id="field" calss="textarea">' . $content . '</textarea>';
+        }
+        else if ($type == 'oneline') {
+            return '<input name="field" id="field" calss="oneline" value="' . $content . '">';
+            }
+        else {
+                $error = '<p>Użyj właściwego typu treści</p>';
+                return $error;
+            }
     }
 
     function load_block($id){

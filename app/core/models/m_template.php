@@ -17,8 +17,16 @@ class Template {
         header("Location: $url");
     }
 
-    function setData($name,$value){
-        $this->data[$name] = htmlentities($value, ENT_QUOTES);
+    function setData($name,$value, $clean = true){
+        if($clean){
+           /*  czysczenie wprowadzonych danych htmlenteties */
+        $this->data[$name] = htmlentities($value, ENT_QUOTES);   
+        }
+        else {
+           /*  bez czyszczenia danych */
+            $this->data[$name] = $value;
+        }
+        
     }
 
     function setAlertTypes($types){

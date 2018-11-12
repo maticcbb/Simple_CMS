@@ -17,7 +17,7 @@ else {
 
     $content = $CMS_Core->Cms->load_block($id);
 
-    $CMS_Core->Template->setData('block' , $id);
+    $CMS_Core->Template->setData('block_id' , $id);
     $CMS_Core->Template->setData('block_type' , $type);
     $CMS_Core->Template->setData('cms_field' , $CMS_Core->Cms->generate_field($type,$content), false);
     

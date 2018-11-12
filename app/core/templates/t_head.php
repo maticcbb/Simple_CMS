@@ -28,7 +28,7 @@ $(document).ready(function(){
        
    });
 
-   $('.edit_link, edit_type').click(function(e){
+   $('.edit_link , edit_type').click(function(e){
        $(this).colorbox({});
    })
 
