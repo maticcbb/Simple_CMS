@@ -155,8 +155,8 @@
 
                 <!--TEXT-->
                 <div class="col-md-7 main-marg ">
-                    <h3 class="text-left">O Firmie</h3>
-                    <p class="text-left">Lorem ipsum dolor sit amet, et qui nisl etiam rationibus. No ius verterem adipisci, quo dicam delenit in, tale minim ignota sit cu. Id ancillae philosophia vis, cu causae mentitum eos. Dicit patrioque ius et. Dolorem adversarium an quo, vis sint vivendum in. Ei nec errem detraxit singulis.
+                    <h3 class="text-left"><?php $CMS->Cms->display_block('content-header-right','oneline'); ?></h3>
+                    <p class="text-left"><?php $CMS->Cms->display_block('content-main-right'); ?>
                     </p>
                 </div>
             </div>
@@ -164,8 +164,8 @@
             <div class="row main-marg">
                 <div class="col-md-7 main-marg  bottom-margin">
                     <!--ARTICLE-->
-                    <h3 class="text-right">Oferta</h3>
-                    <p class="text-right">Lorem ipsum dolor sit amet, et qui nisl etiam rationibus. No ius verterem adipisci, quo dicam delenit in, tale minim ignota sit cu. Id ancillae philosophia vis, cu causae mentitum eos. Dicit patrioque ius et. Dolorem adversarium an quo, vis sint vivendum in. Ei nec errem detraxit singulis.
+                    <h3 class="text-right"><?php $CMS->Cms->display_block('content-main-left', 'oneline'); ?></h3>
+                    <p class="text-right"><?php $CMS->Cms->display_block('content-header-left'); ?>
                     </p>
                 </div>
                 <!--IMG-->
@@ -174,6 +174,9 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div class="row">
+            <div class="col-9"><?php $CMS->Cms->display_block('content-bottom' , 'textarea'); ?></div>
         </div>
     </main>
 
