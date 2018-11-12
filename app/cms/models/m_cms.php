@@ -18,6 +18,7 @@ class Cms {
         $id = str_replace('-', '_', $id);
         /* dozwolone znaki w id*/
         $id = preg_replace('/[^a-zA-Z0-9_]/','' , $id);
+        return strtolower($id);
     }
             /* wyświetla zawartość */
     function display_block($id, $type = 'wysiwyg'){
@@ -69,11 +70,30 @@ class Cms {
     }
 
     function load_block($id){
+        if($stmt = $this->CMS->Database->prepare("SELECT content FROM content WHERE id = ?")){
+            $stmt->bind_param('s', $id);
+            $stmt->execute();
+            $stmt->store_result();
 
+            if($stmt->num_rows != false){
+                $stmt->bind_param($content);
+                $stmt->fetch();
+                $stmt->close();
+                return $content;
+            }
+            else {
+                $stmt->close();
+                return false;
+            }
+        }
     }
 
     function create_block($id){
-
+        if ($stmt = $this->CMS->Database->prepare("INSERT INTO content (id) VALUES (?)")) {
+            $stmt->bind_param('s', $id);
+            $stmt->execute();
+            $stmt->close();
+        }
     }
 
     

@@ -10,5 +10,5 @@ $user = 'root';
 $password = '';
 $db = 'cms_projekt';
 
-require_once(APP_PATH."core/core.php");
+require_once(APP_PATH . "core/core.php");
 $CMS_Core = new CMS_Core($server,$user,$password,$db);
