@@ -43,10 +43,12 @@ class Auth {
         }
     }
 
+   /*  jeśli użytkownik nie jest zalogowany to error */
     function checkAuthorization(){
         global $CMS_Core;
         if($this->checkLoginStatus()== false){
-            $CMS_Core->Template->error('unathorized')
+            $CMS_Core->Template->error('unathorized');
+            exit;
         }
     }
 

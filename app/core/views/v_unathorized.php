@@ -1,17 +1,13 @@
-<?php include('init.php');
-/* sprawdza uprawnienia użytkownika */
-$CMS_Core->Auth->checkAuthorization();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ustawienia</title>
+    <title>Brak uprawnień</title>
 </head>
 <body>
- <h1>Ustawienia</h1>
- <p>Posiadasz uprawnienia</p>   
+ <h1>Brak uprawnień</h1>
+ <p>Nie posiadasz uprawnień</p>   
 </body>
 </html>

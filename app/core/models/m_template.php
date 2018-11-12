@@ -59,5 +59,16 @@ class Template {
             return '';
         }
     }
+
+    function error($type = ''){
+        if($type == 'unathorized'){
+         /*    jeśli nie ma uprawnień */
+            $this->load(APP_PATH . 'core/views/v_unathorized.php');
+        }
+        else {
+            /* jeśli każdy inny błąd */
+            $this->load(APP_PATH . 'core/views/v_error.php');
+        }
+    }
 }
 ?>
