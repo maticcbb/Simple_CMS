@@ -1,8 +1,8 @@
 <?php
 
 class CMS_Core {
-
-    public $Template, $Auth, $Database;
+    /* podstawowe obiekty */
+    public $Template, $Auth, $Database , $Cms;
 
     function __construct($server,$user,$password,$db){
 
@@ -18,6 +18,11 @@ class CMS_Core {
        /* obiekt autoryzacji */
         include(APP_PATH . "core/models/m_auth.php");
         $this->Auth = new Auth();
+
+
+        /* obiekt Cms */
+        include(APP_PATH . "cms/models/m_cms.php");
+        $this->Cms = new Cms();
 
         /* start sesji */
         session_start();
