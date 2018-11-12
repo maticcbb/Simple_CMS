@@ -42,6 +42,15 @@ class Auth {
             return FALSE;
         }
     }
+
+    function checkAuthorization(){
+        global $CMS_Core;
+        if($this->checkLoginStatus()== false){
+            $CMS_Core->Template->error('unathorized')
+        }
+    }
+
+
 /* wylogowanie, usuwa bierzącą sesje i rozpoczyna nową  */
     function logout(){
         session_destroy();
